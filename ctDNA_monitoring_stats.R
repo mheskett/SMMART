@@ -23,20 +23,6 @@ library(dplyr)
 library(sfsmisc)
  
 ### FUNCTIONS ###
-#get_overlap_coef=function(cmut, cwt, smut, swt, id){  ##old version
-#  mu_error=as.numeric(cmut/(cmut+cwt))
-#  mu_sample=as.numeric(smut/(smut+swt))
-#  sd_error=as.numeric(sqrt((cmut*cwt)/( (cmut+cwt)^2*(cmut+cwt+1))))
-#  sd_sample=as.numeric(sqrt((smut*swt)/((smut+swt)^2*(smut+swt+1))))
-#
-#  if (max(c(cmut,smut)) == 0) {
-#    result=NA
-#    return(result)
-#  } else {
-#    xs=seq(max(0,min(mu_error - 4*sd_error, mu_sample - 4*sd_sample)), # xs must stay positive and go between 0,1
-#           min(1,max(mu_error + 4*sd_error, mu_sample + 4*sd_sample)),
-#           length.out=10000) ## this fails if mean and variance are 0 for both sample and case
-#  }
  
 get_overlap_coef=function(cmut, cwt, smut, swt, id){  ##version a/o 190129
   cmu=as.numeric(cmut/(cmut+cwt))
